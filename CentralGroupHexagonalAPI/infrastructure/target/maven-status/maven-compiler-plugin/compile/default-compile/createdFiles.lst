@@ -1,0 +1,6 @@
+org\example\repository\ProductRepository.class
+org\example\mappers\ProductMapper.class
+org\example\entity\Product$ProductBuilder.class
+org\example\adapters\ProductJpaAdapter.class
+org\example\mappers\ProductMapperImpl.class
+org\example\entity\Product.class

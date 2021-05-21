@@ -22,4 +22,8 @@
 
 # What is deferrent between Hexagonal and MVC Architecture?
 
+#Referrence
+> https://www.baeldung.com/hexagonal-architecture-ddd-spring
+> https://reflectoring.io/spring-hexagonal
+
 

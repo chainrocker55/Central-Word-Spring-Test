@@ -2,7 +2,7 @@
 
 # What is a Hexagonal Architecture?
 
- ![alt text] (https://www.baeldung.com/wp-content/uploads/2019/12/DDD-Layers.png)
+![Alt text](https://www.baeldung.com/wp-content/uploads/2019/12/DDD-Layers.png)
 
     Hexagonal architecture is a model of designing software applications around domain logic to isolate it from external factors.
 

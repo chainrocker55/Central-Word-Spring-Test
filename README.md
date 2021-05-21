@@ -18,7 +18,8 @@
 
     Lastly, the infrastructure layer is the part that contains anything that the application needs to work such as database configuration or Spring configuration. Besides, it also implements infrastructure-dependent interfaces from the domain layer.
 
-# Why is a Hexagonal Architecture?
+# Why and when uses a Hexagonal Architecture?
+> If we’re building a CRUD application that simply stores and saves data, an architecture like this is probably overhead. If we’re building an application with rich business rules that can be expressed in a rich domain model that combines state with behavior, then this architecture really shines because it puts the domain model in the center of things.
 
 # What is deferrent between Hexagonal and MVC Architecture?
 

@@ -22,7 +22,7 @@ The domain logic is specified in a business core, which we'll call the inside pa
 
 # What is deferrent between Hexagonal and MVC Architecture?
 
-#Referrence
+# Referrence
 > https://www.baeldung.com/hexagonal-architecture-ddd-spring<br/>
 > https://reflectoring.io/spring-hexagonal
 

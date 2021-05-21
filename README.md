@@ -20,7 +20,19 @@
 # Why and when uses a Hexagonal Architecture?
 > If we’re building a CRUD application that simply stores and saves data, an architecture like this is probably overhead. If we’re building an application with rich business rules that can be expressed in a rich domain model that combines state with behavior, then this architecture really shines because it puts the domain model in the center of things.
 
-# What is deferrent between Hexagonal and MVC Architecture?
+# What is difference between Hexagonal and MVC Architecture?
+
+#Complex
+
+> Using these patterns will help maximise your compliance with the principles of SOLID, but at the cost of an initial increase in development complexity. The hope however is that it'll decrease the development complexity over time as the project grows.
+
+Includes: Hexagonal.
+
+#Simple
+
+> Using these patterns will help increase your compliance with the principles of SOLID, but it'll be easier to skimp on some principles. They're however simpler to use and will help decrease development complexity a lot sooner than the complex patterns.
+
+Includes: MVVM, MVC, MVP.
 
 # Referrence
 > https://www.baeldung.com/hexagonal-architecture-ddd-spring<br/>

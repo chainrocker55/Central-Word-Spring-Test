@@ -7,7 +7,7 @@
 > 1. run mudule bootLoader which is spring boot.
 > 2. base url is http://localhost:8080
 
-# Ennpoint
+# End point
 > 1. /v1/database/product/get -> get all products 
 > 2. /v1/database/product/get/{id} -> get product by id
 > 3. /v1/database/product/add -> post product by object productDto

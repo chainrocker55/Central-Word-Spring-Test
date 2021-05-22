@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/database/product")
-public class ProductController {
+public class ProductDatabaseController {
 
     @Autowired
     private ProductServicePort productServicePort;

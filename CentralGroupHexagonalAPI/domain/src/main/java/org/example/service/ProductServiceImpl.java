@@ -31,7 +31,7 @@ public class ProductServiceImpl implements ProductServicePort {
         return productPersistencePort.updateProduct(productDto);
     }
 
-    @Cacheable("getAllProduct")
+    @Cacheable("getAllProductByH2")
     @Override
     public Map<Integer, ProductDto> getProducts() {
         Map<Integer, ProductDto> hm = productPersistencePort.getProducts()

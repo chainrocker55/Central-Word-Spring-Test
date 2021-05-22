@@ -8,11 +8,15 @@
 > 2. base url is http://localhost:8080
 
 # End point
-> 1. /v1/database/product/get -> get all products 
+## 1 JPA H2 Database
+> 1. /v1/database/product/get -> get all products (Cache by 10 minute)
 > 2. /v1/database/product/get/{id} -> get product by id
 > 3. /v1/database/product/add -> post product by object productDto
 > 4. /v1/database/product/update -> put product by object productDto
 > 5. /v1/database/product/delete/{id} -> delete product by id
+
+## 2 Postman Echo
+> 1. /v1/postman/product/get -> get all products (Cache by 10 minute)
 
 # What is a Hexagonal Architecture?
 

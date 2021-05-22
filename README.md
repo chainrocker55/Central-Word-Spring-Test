@@ -1,7 +1,8 @@
 # Central-Word-Spring-Test
 > Design with Hexagonal architecture which have 3 layer, namely, domain, application, infrastucture.
 > Using both temporary jpa with h2 database and third party with echo postman and already prepared data for test around 10 record of product.
-> It incloulds caching (fixed 10 minute then clear) at get all products, you can see in my code.
+> Incloulding caching (fixed 10 minute then clear) at get all products, you can see in my code.
+> Incloulding Loging every request.
 
 # How to run this project>
 > 1. run mudule bootLoader which is spring boot.

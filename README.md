@@ -1,4 +1,18 @@
 "# Central-Word-Spring-Test" 
+> Design with Hexagonal architecture which have 3 layer, namely, domain, application, infrastucture.
+> Using both temporary jpa with h2 database and third party with echo postman and already prepared data for test around 10 record of product.
+> It incloulds caching (fixed 10 minute then clear) at get all products, you can see in my code.
+
+# How to run this project>
+> 1. run mudule bootLoader which is spring boot.
+> 2. base url is http://localhost:8080
+
+# Ennpoint
+> 1. /v1/database/product/get -> get all products 
+> 2. /v1/database/product/get/{id} -> get product by id
+> 3. /v1/database/product/add -> post product by object productDto
+> 4. /v1/database/product/update -> put product by object productDto
+> 5. /v1/database/product/delete/{id} -> delete product by id
 
 # What is a Hexagonal Architecture?
 

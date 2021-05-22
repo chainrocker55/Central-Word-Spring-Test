@@ -3,6 +3,7 @@ package org.example.service;
 import org.example.data.ProductDto;
 import org.example.ports.api.ProductServicePort;
 import org.example.ports.spi.ProductPersistencePort;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -14,27 +15,28 @@ public class ProductServiceImpl implements ProductServicePort {
     }
 
     @Override
-    public ProductDto addBook(ProductDto productDto) {
-        return productPersistencePort.addBook(productDto);
+    public ProductDto addProduct(ProductDto productDto) {
+        return productPersistencePort.addProduct(productDto);
     }
 
     @Override
-    public void deleteBookById(Long id) {
-        productPersistencePort.deleteBookById(id);
+    public void deleteProductById(Long id) {
+        productPersistencePort.deleteProductById(id);
     }
 
     @Override
-    public ProductDto updateBook(ProductDto productDto) {
-        return productPersistencePort.updateBook(productDto);
+    public ProductDto updateProduct(ProductDto productDto) {
+        return productPersistencePort.updateProduct(productDto);
+    }
+
+    @Cacheable("getAllProduct")
+    @Override
+    public List<ProductDto> getProducts() {
+        return productPersistencePort.getProducts();
     }
 
     @Override
-    public List<ProductDto> getBooks() {
-        return productPersistencePort.getBooks();
-    }
-
-    @Override
-    public ProductDto getBookById(Long bookId) {
-        return productPersistencePort.getBookById(bookId);
+    public ProductDto getProductById(Long bookId) {
+        return productPersistencePort.getProductById(bookId);
     }
 }

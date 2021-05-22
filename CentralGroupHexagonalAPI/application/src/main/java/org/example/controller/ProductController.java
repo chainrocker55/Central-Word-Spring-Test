@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/v1/database/product")
 public class ProductController {
 
     @Autowired
@@ -22,26 +22,26 @@ public class ProductController {
 
     @PostMapping("/add")
     public ProductDto addBook(@RequestBody ProductDto productDto) {
-        return productServicePort.addBook(productDto);
+        return productServicePort.addProduct(productDto);
     }
 
     @PutMapping("/update")
     public ProductDto updateBook(@RequestBody ProductDto productDto) {
-        return productServicePort.updateBook(productDto);
+        return productServicePort.updateProduct(productDto);
     }
 
     @GetMapping("/get/{id}")
     public ProductDto getBookByID(@PathVariable long id) {
-        return productServicePort.getBookById(id);
+        return productServicePort.getProductById(id);
     }
 
     @GetMapping("/get")
     public List<ProductDto> getAllBooks() {
-        return productServicePort.getBooks();
+        return productServicePort.getProducts();
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteBookByID(@PathVariable long id) {
-        productServicePort.deleteBookById(id);
+        productServicePort.deleteProductById(id);
     }
 }

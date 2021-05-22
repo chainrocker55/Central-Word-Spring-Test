@@ -1,5 +1,7 @@
-org\example\ports\api\ProductServicePort.class
-org\example\data\ProductDto.class
 org\example\service\ProductServiceImpl.class
 org\example\data\ProductDto$ProductDtoBuilder.class
+org\example\service\CachingService.class
+org\example\ports\api\ProductServicePort.class
+org\example\data\ProductDto.class
+org\example\constantParams\ConstantParam.class
 org\example\ports\spi\ProductPersistencePort.class

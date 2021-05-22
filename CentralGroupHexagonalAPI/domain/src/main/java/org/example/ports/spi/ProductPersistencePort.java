@@ -5,14 +5,14 @@ import org.example.data.ProductDto;
 import java.util.List;
 
 public interface ProductPersistencePort {
-    ProductDto addBook(ProductDto productDto);
+    ProductDto addProduct(ProductDto productDto);
 
-    void deleteBookById(Long id);
+    void deleteProductById(Long id);
 
-    ProductDto updateBook(ProductDto productDto);
+    ProductDto updateProduct(ProductDto productDto);
 
-    List<ProductDto> getBooks();
+    List<ProductDto> getProducts();
 
-    ProductDto getBookById(Long bookId);
+    ProductDto getProductById(Long bookId);
 
 }

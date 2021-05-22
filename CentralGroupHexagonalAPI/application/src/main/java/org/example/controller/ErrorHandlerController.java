@@ -3,12 +3,15 @@ package org.example.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class ErrorHandlerController {
 
-    @ExceptionHandler({RuntimeException.class})
+
+    @ExceptionHandler
+    @ResponseBody
     public ResponseEntity<Exception> notFound(
             RuntimeException exception
     ) {

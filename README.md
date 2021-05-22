@@ -1,4 +1,4 @@
-"# Central-Word-Spring-Test" 
+# Central-Word-Spring-Test"
 > Design with Hexagonal architecture which have 3 layer, namely, domain, application, infrastucture.
 > Using both temporary jpa with h2 database and third party with echo postman and already prepared data for test around 10 record of product.
 > It incloulds caching (fixed 10 minute then clear) at get all products, you can see in my code.
@@ -8,14 +8,14 @@
 > 2. base url is http://localhost:8080
 
 # End point
-### 1 JPA H2 Database
+###1 JPA H2 Database
 > 1. /v1/database/product/get -> get all products (Cache by 10 minute)
 > 2. /v1/database/product/get/{id} -> get product by id
 > 3. /v1/database/product/add -> post product by object productDto
 > 4. /v1/database/product/update -> put product by object productDto
 > 5. /v1/database/product/delete/{id} -> delete product by id
 
-### 2 Postman Echo
+###2 Postman Echo
 > 1. /v1/postman/product/get -> get all products (Cache by 10 minute)
 
 # What is a Hexagonal Architecture?

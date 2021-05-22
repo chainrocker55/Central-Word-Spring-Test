@@ -6,6 +6,7 @@ import org.example.ports.api.ProductServicePort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,11 +15,6 @@ public class ProductController {
 
     @Autowired
     private ProductServicePort productServicePort;
-
-    @GetMapping("/")
-    public String helloWorld() {
-        return "Hello World";
-    }
 
     @PostMapping("/add")
     public ProductDto addBook(@RequestBody ProductDto productDto) {
@@ -31,17 +27,18 @@ public class ProductController {
     }
 
     @GetMapping("/get/{id}")
-    public ProductDto getBookByID(@PathVariable long id) {
-        return productServicePort.getProductById(id);
+    public ProductDto getBookByID(@PathVariable int id) {
+        return productServicePort.getProducts().get(id);
     }
 
     @GetMapping("/get")
     public List<ProductDto> getAllBooks() {
-        return productServicePort.getProducts();
+
+        return new ArrayList<>(productServicePort.getProducts().values());
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteBookByID(@PathVariable long id) {
+    public void deleteBookByID(@PathVariable int id) {
         productServicePort.deleteProductById(id);
     }
 }

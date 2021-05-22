@@ -7,12 +7,12 @@ import java.util.List;
 public interface ProductPersistencePort {
     ProductDto addProduct(ProductDto productDto);
 
-    void deleteProductById(Long id);
+    void deleteProductById(Integer id);
 
     ProductDto updateProduct(ProductDto productDto);
 
     List<ProductDto> getProducts();
 
-    ProductDto getProductById(Long bookId);
+    ProductDto getProductById(Integer productId);
 
 }

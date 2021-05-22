@@ -21,15 +21,15 @@ public class ProductJpaAdapter implements ProductPersistencePort {
     @Override
     public ProductDto addProduct(ProductDto productDto) {
 
-        Product product = ProductMapper.INSTANCE.bookDtoToBook(productDto);
+        Product product = ProductMapper.INSTANCE.productDtoToProduct(productDto);
 
         Product productSaved = productRepository.save(product);
 
-        return ProductMapper.INSTANCE.bookToBookDto(productSaved);
+        return ProductMapper.INSTANCE.productToProductDto(productSaved);
     }
 
     @Override
-    public void deleteProductById(Long id) {
+    public void deleteProductById(Integer id) {
         productRepository.deleteById(id);
     }
 
@@ -43,15 +43,15 @@ public class ProductJpaAdapter implements ProductPersistencePort {
 
         List<Product> productList = productRepository.findAll();
 
-        return ProductMapper.INSTANCE.bookListToBookDtoList(productList);
+        return ProductMapper.INSTANCE.productListToProductDtoList(productList);
     }
 
     @Override
-    public ProductDto getProductById(Long bookId) {
+    public ProductDto getProductById(Integer productId) {
 
-        Optional<Product> book = productRepository.findById(bookId);
+        Optional<Product> book = productRepository.findById(productId);
 
-        return book.map(ProductMapper.INSTANCE::bookToBookDto).orElse(null);
+        return book.map(ProductMapper.INSTANCE::productToProductDto).orElse(null);
 
     }
 }

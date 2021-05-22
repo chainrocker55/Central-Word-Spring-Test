@@ -12,11 +12,11 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    ProductDto bookToBookDto(Product product);
+    ProductDto productToProductDto(Product product);
 
-    Product bookDtoToBook(ProductDto productDto);
+    Product productDtoToProduct(ProductDto productDto);
 
-    List<ProductDto> bookListToBookDtoList(List<Product> productList);
+    List<ProductDto> productListToProductDtoList(List<Product> productList);
 
-    List<Product> BookDtoListToBookList(List<ProductDto> productDtoList);
+    List<Product> productDtoListToProductList(List<ProductDto> productDtoList);
 }

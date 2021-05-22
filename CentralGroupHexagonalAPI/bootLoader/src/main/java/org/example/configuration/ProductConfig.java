@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 public class ProductConfig {
 
     @Bean
-    public ProductPersistencePort bookPersistence(){
+    public ProductPersistencePort productPersistence(){
         return new ProductJpaAdapter();
     }
 
     @Bean
-    public ProductServicePort bookService(){
-        return new ProductServiceImpl(bookPersistence());
+    public ProductServicePort productService(){
+        return new ProductServiceImpl(productPersistence());
     }
 }

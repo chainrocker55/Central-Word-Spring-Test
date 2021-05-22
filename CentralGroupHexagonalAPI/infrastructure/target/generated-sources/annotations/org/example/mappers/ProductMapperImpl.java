@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-05-22T16:06:48+0700",
+    date = "2021-05-22T17:05:24+0700",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.2 (Oracle Corporation)"
 )
 @Component
 public class ProductMapperImpl implements ProductMapper {
 
     @Override
-    public ProductDto bookToBookDto(Product product) {
+    public ProductDto productToProductDto(Product product) {
         if ( product == null ) {
             return null;
         }
@@ -34,7 +34,7 @@ public class ProductMapperImpl implements ProductMapper {
     }
 
     @Override
-    public Product bookDtoToBook(ProductDto productDto) {
+    public Product productDtoToProduct(ProductDto productDto) {
         if ( productDto == null ) {
             return null;
         }
@@ -50,28 +50,28 @@ public class ProductMapperImpl implements ProductMapper {
     }
 
     @Override
-    public List<ProductDto> bookListToBookDtoList(List<Product> productList) {
+    public List<ProductDto> productListToProductDtoList(List<Product> productList) {
         if ( productList == null ) {
             return null;
         }
 
         List<ProductDto> list = new ArrayList<ProductDto>( productList.size() );
         for ( Product product : productList ) {
-            list.add( bookToBookDto( product ) );
+            list.add( productToProductDto( product ) );
         }
 
         return list;
     }
 
     @Override
-    public List<Product> BookDtoListToBookList(List<ProductDto> productDtoList) {
+    public List<Product> productDtoListToProductList(List<ProductDto> productDtoList) {
         if ( productDtoList == null ) {
             return null;
         }
 
         List<Product> list = new ArrayList<Product>( productDtoList.size() );
         for ( ProductDto productDto : productDtoList ) {
-            list.add( bookDtoToBook( productDto ) );
+            list.add( productDtoToProduct( productDto ) );
         }
 
         return list;

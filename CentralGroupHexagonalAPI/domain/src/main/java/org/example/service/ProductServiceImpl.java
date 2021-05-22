@@ -5,7 +5,9 @@ import org.example.ports.api.ProductServicePort;
 import org.example.ports.spi.ProductPersistencePort;
 import org.springframework.cache.annotation.Cacheable;
 
-import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ProductServiceImpl implements ProductServicePort {
     private ProductPersistencePort productPersistencePort;
@@ -20,7 +22,7 @@ public class ProductServiceImpl implements ProductServicePort {
     }
 
     @Override
-    public void deleteProductById(Long id) {
+    public void deleteProductById(Integer id) {
         productPersistencePort.deleteProductById(id);
     }
 
@@ -31,12 +33,17 @@ public class ProductServiceImpl implements ProductServicePort {
 
     @Cacheable("getAllProduct")
     @Override
-    public List<ProductDto> getProducts() {
-        return productPersistencePort.getProducts();
+    public Map<Integer, ProductDto> getProducts() {
+        Map<Integer, ProductDto> hm = productPersistencePort.getProducts()
+                .stream().
+                parallel().
+                collect(Collectors.toMap(ProductDto::getId, Function.identity()));
+
+        return hm;
     }
 
     @Override
-    public ProductDto getProductById(Long bookId) {
-        return productPersistencePort.getProductById(bookId);
+    public ProductDto getProductById(Integer productId) {
+        return productPersistencePort.getProductById(productId);
     }
 }

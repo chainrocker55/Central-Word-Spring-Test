@@ -10,6 +10,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -83,6 +87,26 @@ class ProductServiceImplTest {
         assertEquals(productDto.getName(),productDtoReturn.getName());
         assertEquals(productDto.getDescription(),productDtoReturn.getDescription());
         assertEquals(productDto.getPrice(),productDtoReturn.getPrice());
+
+    }
+
+    @Test
+    void getAllProduct_returnAllProduct(){
+        List<ProductDto> productsDto = new ArrayList<>();
+        for(int i = 1;i<=3;i++){
+            ProductDto productDto = new ProductDto();
+            productDto.setId(i);
+            productDto.setName("Toyota_"+i);
+            productDto.setDescription("หนังสือเรียน"+i);
+            productDto.setPrice(500.0+i);
+            productsDto.add(productDto);
+        }
+
+        when(productPersistencePort.getProducts()).thenReturn(productsDto);
+        Map<Integer, ProductDto> hm = productService.getProducts();
+
+        verify(productPersistencePort,atLeastOnce()).getProducts();
+        assertEquals(hm.size(),productsDto.size());
 
     }
 
